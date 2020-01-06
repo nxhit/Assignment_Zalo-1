@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab One
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar></ion-searchbar>
+  <ion-item-group *ngFor="let x of mylist">
+    <ion-item-divider>
+      <ion-label>
+        {{x.headers}}
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item *ngFor="let y of x.item">
+      <ion-label>
+       <p>{{y.Name}}</p>
+       <p>{{y.Singer}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-item-group>
+</ion-content>

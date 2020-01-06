@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content ion-padding>
+  <ion-img [src]="song?.image"></ion-img>
+  <div style="font-weight: bold;text-align: center;">
+      <h3>{{song.Name}}</h3>
+      <h5>{{song.Singer}}</h5>
+
+      <h2>Lời bài hát</h2>
+      <h4>{{song.loibaihat}}</h4>
+
+  </div>
+</ion-content>

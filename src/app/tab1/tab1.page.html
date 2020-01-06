@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button hrefDefault="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionChange)="thongbao()" [(ngModel)]="searchValue"></ion-searchbar>
+  <!-- <ion-button (click)="thongbao()">Tìm</ion-button> -->
+  <!-- <p style="color:red;">{{searchValue}}</p> -->
+  <ion-item-group *ngFor="let x of mylist">
+    <ion-item-divider style="background-color: rgb(246, 160, 228);">
+      <ion-label color="primary">
+        {{x.headers}}
+      </ion-label>
+    </ion-item-divider>
+
+    <ion-item *ngFor="let y of x.item" >
+      <ion-label>
+        <p style="font-weight: bold;">{{y.Name}}</p>
+        <p>{{y.Singer}}</p>
+      </ion-label>
+     <ion-button (click)="goToDetailPage(y)"><ion-icon name="star"></ion-icon> Play</ion-button>
+    </ion-item>
+
+  </ion-item-group>
+  <div style="color:red;text-align: center;" *ngIf="mylistIsEmpty()">Không tìm thấy kết quả</div>
+
+
+
+</ion-content>
